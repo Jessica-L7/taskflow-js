@@ -22,6 +22,7 @@ function addTask(){
 listContainer.addEventListener("click", function(e){
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("checked");
+    updateTaskCounter();
   saveData();}
     else if (e.target.tagName === "SPAN"){
       e.target.parentElement.remove();
@@ -42,14 +43,14 @@ inputBox.addEventListener("keyup", function(e) {
 
 function updateTaskCounter() {
 
-  const totalTasks = listContainer.children.length;
+  const incompleteTasks = document.querySelectorAll("li:not(.checked)").length;
 
-  if(totalTasks === 1){
-    taskCounter.innerHTML = `${totalTasks} task`;
+  if(incompleteTasks === 1){
+    taskCounter.innerHTML = `${incompleteTasks} task`;
   }
 
   else{
-    taskCounter.innerHTML = `${totalTasks} tasks`;
+    taskCounter.innerHTML = `${incompleteTasks} tasks`;
   }
 
 }
@@ -59,4 +60,3 @@ function showTask(){
 }
 showTask();
 updateTaskCounter();
-
