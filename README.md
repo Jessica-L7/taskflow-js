@@ -8,7 +8,7 @@ TaskFlow JS allows users to add, complete and delete tasks with persistent brows
 
 ## Live Demo
 
-Coming soon
+https://jessica-l7.github.io/taskflow-js/
 
 ---
 
